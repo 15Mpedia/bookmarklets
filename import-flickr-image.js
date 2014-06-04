@@ -5,25 +5,26 @@ function pad(n, l) {
  return s;
 }
  
-title = document.querySelector('meta[property="og:title"]').content;
-imageurl = document.querySelector('meta[property="og:url"]').content;
+title = document.querySelector('meta[name="og:title"]').content;
+imageurl = document.querySelector('meta[name="og:url"]').content;
+setsurl = document.querySelector('meta[name="flickr_photos:sets"]').content;
 fullimageurl = 'https://'+document.body.innerHTML.match(/\/([a-z0-9]+\.staticflickr\.com[^"]*?_o\.jpg)\"/)[1];
-desc = document.querySelector('meta[property="og:description"]').content;
+fullimageurl = fullimageurl.replace(/\\\//g, '/');
+desc = document.querySelector('meta[name="og:description"]').content;
 if (desc.match(/has uploaded [0-9]+ photos to Flickr/)) { desc = ''; }
 desc = desc.replace(/&quot;/g, '"');
 username = '';
 if (document.head.innerHTML.match(/flickr_photos:by/)) {
-username = document.querySelector('meta[property="flickr_photos:by"]').content.split('/');
+username = document.querySelector('meta[name="flickr_photos:by"]').content.split('/');
 username = username[username.length-2];
 }
 imageid = imageurl.split('/');imageid = imageid[imageid.length-2];
 fuente = '['+imageurl+' '+title+']';
 albumid = 'noalbum';
-if (document.body.innerHTML.match(/"set_id":/)) {
-album = document.body.innerHTML.match(/"set_id":"([0-9]+?)","type":"set","title":"(.*?)","url":/);
-albumid = album[1];
-albumtitle = album[2];
-fuente = fuente+' ([http://www.flickr.com/photos/'+username+'/sets/'+albumid+'/ '+albumtitle+'])';
+if (document.body.innerHTML.match(/"set-models","title"/)) {
+albumid = setsurl.match(/sets\/([0-9]+)/)[1];
+albumtitle = document.body.innerHTML.match(/"set-models","title":"(.*?)"/)[1];
+fuente = fuente+' ([' + setsurl + ' ' +  albumtitle + '])';
 }
 datetaken = '';
 if (document.body.innerHTML.match(/"date_taken":/)) {
@@ -31,7 +32,7 @@ datetaken = document.body.innerHTML.match(/"date_taken":"([^"]*?)"/)[1];
 }
 license = '';
 if (document.body.innerHTML.match(/"license":/)) {
-licensenum = parseInt(document.body.innerHTML.match(/"license":"([^"]*?)"/)[1]);
+licensenum = parseInt(document.body.innerHTML.match(/"license":([0-9]+)/)[1]);
 switch (licensenum) {
 case 0: license = 'All Rights Reserved'; break;
 case 1: license = '{{cc-by-nc-sa-2.0}}'; break;
@@ -46,7 +47,7 @@ case 8: license = 'United States Government Work'; break;
 }
 coordenadas = '';
 if (document.head.innerHTML.match(/flickr_photos:location:latitude/) && document.head.innerHTML.match(/flickr_photos:location:longitude/)) {
-coordenadas = document.querySelector('meta[property="flickr_photos:location:latitude"]').content + ', ' + document.querySelector('meta[property="flickr_photos:location:longitude"]').content;
+coordenadas = document.querySelector('meta[name="flickr_photos:location:latitude"]').content + ', ' + document.querySelector('meta[property="flickr_photos:location:longitude"]').content;
 }
 imagename = username+' - '+albumid+' - '+imageid+'.jpg';
  
