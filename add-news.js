@@ -43,6 +43,7 @@ f['larepublica']='La República';
 f['lavanguardia']='La Vanguardia';
 f['lavozdegalicia']='La Voz de Galicia';
 f['lavozdigital']='La Voz Digital';
+f['levante-emv']='Levante-EMV';
 f['madrilonia']='Madrilonia';
 f['mundoobrero']='Mundo Obrero';
 f['periodismohumano']='Periodismo Humano';
