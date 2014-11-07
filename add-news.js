@@ -71,7 +71,7 @@ if (!fuente) { fuente = dominio; }
 body = document.body.innerHTML;
 fecha = '';
 if (dominio == 'librered') {
-    t = body.match(/<li>[a-z]+, ([a-z]+) (\d+), (\d\d\d\d), \d+:\d+<\/li>/i);
+    t = body.match(/<li>[a-záéíóú]+, ([a-záéíóú]+) (\d+), (\d\d\d\d), \d+:\d+<\/li>/i);
     mes = mes2num[t[1]];
     dia = t[2];
     if (dia.length == 1) { dia = '0'+dia; }
