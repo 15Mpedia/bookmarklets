@@ -28,6 +28,5 @@ javascript:(function(){
         + '?wpUploadFileURL=' + encodeURIComponent(imageurl)
         + '&wpDestFile=' + encodeURIComponent(imagename)
         + '&wpUploadDescription=' + encodeURIComponent(infobox),
-        + '&wpSummary
         'Import%20to%2015Mpedia'));
 })();
