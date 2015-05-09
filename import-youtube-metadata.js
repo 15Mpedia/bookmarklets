@@ -1,9 +1,9 @@
 javascript:(function(){
-    url = document.querySelector('meta[property="og:url"]').content;
-    videoid = url.split('v=')[1];
+    videoid = document.URL.split('?v=')[1].split('&')[0];
     videouser = document.querySelectorAll('link[itemprop="url"]')[1].href.split('/')[4];
+    /* no usar og:title ni similares pq el JS a veces pone el del video anterior */
     title = document.getElementById('eow-title').title;        
-    imageurl = document.querySelector('meta[property="og:image"]').content;
+    imageurl = 'https://i.ytimg.com/vi/'+videoid+'/hqdefault.jpg';
     
     desc = document.getElementById('eow-description').innerHTML;
     desc = desc.replace(/&quot;/g, '"');
@@ -13,7 +13,7 @@ javascript:(function(){
     date_ = document.querySelector('meta[itemprop="datePublished"]').content;
     imagename = 'YouTube - '+videouser+' - '+videoid+'.jpg';
     license = '{{lye}}';
-    if (document.getElementById('eow-reuse') && document.getElementById('eow-reuse').innerHTML.match(/creative_commons/)) { license = '{{cc-by-3.0}}'; }
+    if (document.body.innerHTML.match(/\/t\/creative_commons/)) { license = '{{cc-by-3.0}}'; }
     
     infobox = '{{Infobox Archivo\n|embebido=YouTube\n|embebido id='+videoid+'\n|embebido usuario='+videouser+'\n|embebido título='+title+'\n|descripción={{descripción de youtube|1='+desc+'}}\n|fecha de publicación='+date_+'\n|autor={{youtube channel|'+videouser+'}}\n|licencia='+license+'\n}}';
     
