@@ -6,7 +6,7 @@ javascript:(function(){
         var hour = this.getHours().toString();
         var min = this.getMinutes().toString();
         var sec = this.getSeconds().toString();
-        return yyyy + '-' + (mm[1]?mm:"0"+mm[0]) + '-' + (dd[1]?dd:"0"+dd[0]) + ' ' + hour + ':' + min + ':' + sec;
+        return yyyy + '-' + (mm[1]?mm:"0"+mm[0]) + '-' + (dd[1]?dd:"0"+dd[0]) + ' ' + (hour[1]?hour:"0"+hour[0]) + ':' + (min[1]?min:"0"+min[0]) + ':' + (sec[1]?sec:"0"+sec[0]);
     };
     
     description = document.querySelector('meta[property="og:description"]').content;
