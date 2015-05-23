@@ -27,7 +27,11 @@ javascript:(function(){
         fuente = '{{tweet|'+username+'|'+tweetid+'}}';
         fechapub = document.body.innerHTML.match(/data-time-ms="([0-9]+?)"/)[1];
         fechapub = new Date(parseInt(fechapub)).yyyymmddhhmmss(); 
-        keywords = description.match(/#\w+/g).join(', ');
+        if (description.match(/#\w+/g)) {
+		    keywords = description.match(/#\w+/g).join(', ');
+	    }else{
+		    keywords = '';
+		}
         
         infobox = '{{Infobox Archivo\n| descripción = '+desc+'\n| fuente = '+fuente+'\n| fecha de publicación = '+fechapub+'\n| autor = {{twitter|'+username+'}}\n| palabras clave = '+keywords+'\n}}';
          
