@@ -78,6 +78,7 @@ f['lavozdemoron']='La Voz de Morón';
 f['lavozdigital']='La Voz Digital';
 f['levante-emv']='Levante-EMV';
 f['librered']='LibreRed';
+f['lne']='La Nueva España';
 f['madrilonia']='Madrilonia';
 f['miciudadreal']='Mi Ciudad Real';
 f['mundoobrero']='Mundo Obrero';
