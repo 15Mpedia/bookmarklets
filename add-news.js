@@ -85,6 +85,7 @@ f['madrilonia']='Madrilonia';
 f['miciudadreal']='Mi Ciudad Real';
 f['mundoobrero']='Mundo Obrero';
 f['nodo50']='Nodo50';
+f['noticiasdenavarra']='Noticias de Navarra';
 f['palestinalibre']='Palestina Libre';
 f['pce']='Partido Comunista de España';
 f['periodismohumano']='Periodismo Humano';
