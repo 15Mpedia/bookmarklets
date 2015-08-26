@@ -76,6 +76,7 @@ f['lavanguardia']='La Vanguardia';
 f['laverdad']='La Verdad';
 f['lavozdealmeria']='La Voz de Almería';
 f['lavozdegalicia']='La Voz de Galicia';
+f['lavozdelsur']='La Voz del Sur';
 f['lavozdemoron']='La Voz de Morón';
 f['lavozdigital']='La Voz Digital';
 f['levante-emv']='Levante-EMV';
