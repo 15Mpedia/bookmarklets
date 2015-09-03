@@ -57,6 +57,7 @@ f['expansion']='Expansión';
 f['feminicidio']='Feminicidio.net';
 f['granadadigital']='Granada Digital';
 f['heraldo']='Heraldo';
+f['huelvainformacion']='Huelva Información';
 f['huffingtonpost']='El Huffington Post';
 f['ideal']='Ideal';
 f['infolibre']='InfoLibre';
