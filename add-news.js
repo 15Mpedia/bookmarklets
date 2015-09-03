@@ -32,6 +32,7 @@ f['aragondigital']='Aragón Digital';
 f['cadenaser']='Cadena Ser';
 f['cincodias']='Cinco Días';
 f['ciudadrealdigital']='Ciudad Real Digital';
+f['cgtandalucia']='CGT Andalucía';
 f['cuartopoder']='Cuarto Poder';
 f['cubadebate']='Cubadebate';
 f['diagonalperiodico']='Diagonal';
