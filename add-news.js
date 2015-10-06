@@ -131,6 +131,6 @@ if (dominio == 'librered') {
         }
     }
 }
-
-alert('Copia (Ctrl-C) el siguiente código y pégalo en la página de 15Mpedia apropiada:\n\n* {{noticia|titular='+titulo+'|enlace='+enlace+'|fuente='+fuente+'|fecha='+fecha+'}}\n\nNota: Repasa que los campos sean correctos');
+var today = new Date().toISOString().split('T')[0];
+alert('Copia (Ctrl-C) el siguiente código y pégalo en la página de 15Mpedia apropiada:\n\n* {{noticia|titular='+titulo+'|enlace='+enlace+'|fuente='+fuente+'|fecha='+fecha+'}}\n\nPara Wikipedia en inglés:\n\n{{cite web|title='+titulo+'|url='+enlace+'|publisher='+fuente+'|date='+fecha+'|accessdate='+today+'}}\n\nNota: Repasa que los campos sean correctos');
 })();
