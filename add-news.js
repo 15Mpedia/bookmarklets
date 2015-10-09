@@ -39,6 +39,7 @@ f['diagonalperiodico']='Diagonal';
 f['diariodecadiz']='Diario de Cádiz';
 f['diariodecordoba']='Diario de Córdoba';
 f['diariodeteruel']='Diario de Teruel';
+f['diarioinformacion']='Diario Información';
 f['diariosur']='Diario Sur';
 f['digitalvalles']='Digital Vallès';
 f['ecorepublicano']='Eco Republicano';
@@ -52,12 +53,14 @@ f['elespiadigital']='El Espía Digital';
 f['elmundo']='El Mundo';
 f['elpais']='El País';
 f['elperiodico']='El Periódico';
+f['elperiodicoextremadura']='El Periódico de Extremadura';
 f['elplural']='El Plural';
 f['europapress']='Europa Press';
 f['expansion']='Expansión';
 f['feminicidio']='Feminicidio.net';
 f['granadadigital']='Granada Digital';
 f['heraldo']='Heraldo';
+f['hoy']='Hoy';
 f['huelvainformacion']='Huelva Información';
 f['huffingtonpost']='El Huffington Post';
 f['ideal']='Ideal';
@@ -85,9 +88,11 @@ f['levante-emv']='Levante-EMV';
 f['librered']='LibreRed';
 f['lne']='La Nueva España';
 f['madrilonia']='Madrilonia';
+f['malagahoy']='Málaga Hoy';
 f['miciudadreal']='Mi Ciudad Real';
 f['mundoobrero']='Mundo Obrero';
 f['nodo50']='Nodo50';
+f['noticiasdealava']='Noticias de Álava';
 f['noticiasdenavarra']='Noticias de Navarra';
 f['palestinalibre']='Palestina Libre';
 f['pce']='Partido Comunista de España';
@@ -114,7 +119,7 @@ if (dominio == 'librered') {
     if (dia.length == 1) { dia = '0'+dia; }
     fecha = t[3] + '-' + mes + '-' + dia;
 } else {
-    fechaurl = enlace.match(/\/((20|19)[0-9][0-9][\/\-][0-1][0-9][\/\-][0-1][0-9])\//);
+    fechaurl = enlace.match(/\/((20|19)[0-9][0-9][\/\-][0-1][0-9][\/\-][0-3][0-9])\//);
     if (fechaurl) {
         fecha = fechaurl[1].replace(/[\/\-]/g, '-');
     } else {
@@ -132,5 +137,5 @@ if (dominio == 'librered') {
     }
 }
 var today = new Date().toISOString().split('T')[0];
-alert('Copia (Ctrl-C) el siguiente código y pégalo en la página de 15Mpedia apropiada:\n\n* {{noticia|titular='+titulo+'|enlace='+enlace+'|fuente='+fuente+'|fecha='+fecha+'}}\n\nPara Wikipedia en inglés:\n\n{{cite web|title='+titulo+'|url='+enlace+'|publisher='+fuente+'|date='+fecha+'|accessdate='+today+'}}\n\nNota: Repasa que los campos sean correctos');
+alert('Copia (Ctrl-C) el siguiente código y pégalo en la página de 15Mpedia apropiada:\n\n* {{noticia|titular='+titulo+'|enlace='+enlace+'|fuente='+fuente+'|fecha='+fecha+'}}\n\nPara Wikipedia en inglés:\n\n<ref>{{cite web|title='+titulo+'|url='+enlace+'|publisher='+fuente+'|date='+fecha+'|accessdate='+today+'|language=Spanish}}</ref>\n\nNota: Repasa que los campos sean correctos');
 })();
