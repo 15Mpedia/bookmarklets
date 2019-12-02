@@ -1,8 +1,8 @@
 javascript:(function(){
-var a='';
-for(var ln=0;ln<document.links.length;ln++){
-    var link=''+document.links[ln];
-    if ( link.match(/facebook|instagram|twitter|youtube/i) ) {
-        a+=link+'\n';
+var result='';
+for(var n=0;n<document.links.length;n++){
+    var link=''+document.links[n];
+    if ( link.match(/(facebook|instagram|twitter|youtube)\./i) && ! result.match(link)) {
+        result+=link+'\n';
     }
-};alert(a);})();
+};alert(result);})();
